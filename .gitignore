@@ -1,0 +1,48 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.py[oc]
+.Python
+wheels/
+*.egg-info
+
+# Virtual environments
+env/
+venv/
+ENV/
+.venv 
+
+# Database
+*.db
+*.sqlite3
+
+# Environment
+.env
+.env.local
+
+# Logs
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project specific
+instance/
+alembic.ini
+
+# uv
+uv.lock
+
+# Python packaging
+dist/
+build/
