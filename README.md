@@ -44,14 +44,17 @@ for Windows instead `source .venv/bin/activate` run
 
 ### Project Structure
 
+```text
 arq-site/
 ├── app/ # Main application
 ├── tests/ # Test files
 ├── static/ # CSS, JS, images
 └── alembic/ # Database migrations
+```
 
 Более подробная стрктура
 
+```text
 arq-site/
 ├── .venv/                     # Виртуальное окружение (uv)
 ├── app/
@@ -81,3 +84,4 @@ arq-site/
 Проверка через uvocorn
 `uvicorn app.main:app --reload --host 0.0.0.0 --port 8000 --app-dir .`
 
+```
