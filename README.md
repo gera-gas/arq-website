@@ -79,9 +79,9 @@ arq-site/
 ├── pyproject.toml           # Зависимости (uv)
 ├── uv.lock                  # Лок файл зависимостей
 └── README.md
+```
 
 ### Server runing
 Проверка через uvocorn
 `uvicorn app.main:app --reload --host 0.0.0.0 --port 8000 --app-dir .`
 
-```
