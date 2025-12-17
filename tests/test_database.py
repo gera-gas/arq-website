@@ -8,7 +8,7 @@ from sqlalchemy.orm import sessionmaker
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from app.database import Base, get_db
-from app.models import Vacancy, AdminUser
+from app.models import Vacancy, AdminUser # импорт с регистрацией моделей в Base.metadata
 
 # Тестовая база данных в памяти (не сохраняется на диск)
 TEST_DATABASE_URL = "sqlite:///:memory:"
