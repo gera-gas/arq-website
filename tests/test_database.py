@@ -3,6 +3,7 @@ import os
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy import text
 
 # Добавляем путь к проекту для импортов
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -34,7 +35,7 @@ def test_db():
 def test_database_connection(test_db):
     """Тест: подключение к БД работает"""
     # Простой запрос к БД
-    result = test_db.execute("SELECT 1").fetchone()
+    result = test_db.execute(text("SELECT 1")).fetchone()
     assert result[0] == 1
     print("DB connection test: success!")
 
@@ -94,7 +95,8 @@ def test_update_vacancy(test_db):
     test_db.refresh(vacancy)
     
     # Проверяем обновление
-    updated_vacancy = test_db.query(Vacancy).get(vacancy.id)
+    #updated_vacancy = test_db.query(Vacancy).get(vacancy.id)
+    updated_vacancy = test_db.get(Vacancy, vacancy.id)
     assert updated_vacancy.title == "New vacancy"
     assert updated_vacancy.is_active == False
     

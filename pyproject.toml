@@ -1,20 +1,30 @@
 [project]
 name = "arq-website"
 version = "0.1.0"
-description = "ARQ Professional company website"
-readme = "README.md"
-requires-python = ">=3.9"
+description = "ARQ company website"
+requires-python = ">=3.11"
+
 dependencies = [
-    "fastapi>=0.104.0",
-    "uvicorn[standard]>=0.24.0",
-    "sqlalchemy>=2.0.0",
-    "python-jose[cryptography]>=3.3.0",
-    "passlib[bcrypt]>=1.7.4",
-    "python-multipart>=0.0.6",
-    "jinja2>=3.1.0",
-    "python-dotenv>=1.0.0",
+    "fastapi",
+    "uvicorn[standard]",
+    "sqlalchemy",
+    "jinja2",
+    "python-dotenv",
+    "pytest",
+    # passlib[argon2]
 ]
 
 [build-system]
-requires = ["setuptools>=61.0"]  # Используем простой setuptools вместо hatchling
+requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
+
+# РЕШЕНИЕ КОНФЛИКТА app/alembic:
+[tool.setuptools]
+# Вариант А: Просто укажи явно пакет app
+packages = ["app"]
+
+# Вариант Б: Или используй поиск с исключением alembic
+# [tool.setuptools.packages.find]
+# where = ["."]
+# include = ["app*"]
+# exclude = ["alembic*", "tests*", "scripts*", "*.egg-info"]

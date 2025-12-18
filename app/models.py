@@ -20,5 +20,6 @@ class AdminUser(Base):
     
     id = Column(Integer, primary_key=True, index=True)
     username = Column(String(50), unique=True, nullable=False, index=True)
-    hashed_password = Column(String(128), nullable=False)
+    #hashed_password = Column(String(128), nullable=False)
+    hashed_password = Column(String(255), nullable=False)  # Argon2 хеши длиннее
     created_at = Column(DateTime(timezone=True), server_default=func.now())
