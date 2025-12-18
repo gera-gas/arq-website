@@ -122,25 +122,26 @@ def test_delete_vacancy(test_db):
     print("Vacancy deletion success!")
 
 def test_create_admin_user(test_db):
-    """Тест: создание администратора"""
-    # Импортируем функцию хеширования паролей
-    from passlib.context import CryptContext
-    pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+    """Тест: создание администратора с Argon2"""
+    from app.auth import get_password_hash, verify_password
+    
     # Создаём администратора
     admin = AdminUser(
         username="testadmin",
-        hashed_password=pwd_context.hash("testpassword123")
+        hashed_password=get_password_hash("testpassword123")
     )
+    
     test_db.add(admin)
     test_db.commit()
     test_db.refresh(admin)
+    
     # Проверяем создание
     assert admin.id is not None
     assert admin.username == "testadmin"
-    # Проверяем хеш пароля
-    assert pwd_context.verify("testpassword123", admin.hashed_password)
     
-    print(f"Admin created: {admin.username}")
+    # Проверяем хеш пароля
+    assert verify_password("testpassword123", admin.hashed_password)
+    assert not verify_password("wrongpassword", admin.hashed_password)  # Неправильный пароль
 
 def test_crud_operations_flow(test_db):
     """Тест: полный цикл CRUD операций"""

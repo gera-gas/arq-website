@@ -29,7 +29,7 @@ def create_test_data():
     
     db = SessionLocal()
     #pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
-    from app.auth import hash_password
+    from app.auth import get_password_hash
     
     try:
         # Создаём тестового администратора
@@ -37,7 +37,8 @@ def create_test_data():
         if not admin_exists:
             admin = AdminUser(
                 username="admin",
-                hashed_password=hash_password("admin123")
+                hashed_password=get_password_hash("admin123")
+                #hashed_password=hash_password_stub("admin123")
                 #hashed_password=pwd_context.hash("admin123")  # Смени в продакшене!
             )
             db.add(admin)
