@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!-- 
+Главная страница сайта ARQ.
+Наследуется от base.html, переопределяет блоки content и title.
+-->
+{% extends "base.html" %}
+
+{% block title %}
+ARQ - Главная страница
+{% endblock %}
+
+{% block content %}
+<!-- 
+Блок content - основное содержимое страницы.
+Здесь будет заставка с логотипом ARQ.
+-->
+<section class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-gray-100">
+    <div class="text-center px-4">
+        <!-- Логотип ARQ -->
+        <div class="space-y-6">
+            <div class="flex justify-center space-x-3">
+                <span class="font-bold text-7xl md:text-9xl text-blue-600">A</span>
+                <span class="font-bold text-7xl md:text-9xl text-red-600">R</span>
+                <span class="font-bold text-7xl md:text-9xl text-green-600">Q</span>
+            </div>
+            
+            <!-- Девиз компании -->
+            <div class="text-2xl md:text-4xl font-light text-gray-600 tracking-wider">
+                Attention | Responsibility | Quality
+            </div>
+            
+            <!-- Описание -->
+            <div class="pt-8 max-w-2xl mx-auto">
+                <p class="text-lg md:text-xl text-gray-500">
+                    Профессиональные IT-решения для вашего бизнеса
+                </p>
+                <p class="text-md md:text-lg text-gray-400 mt-4">
+                    Разработка, внедрение и поддержка сложных IT-систем
+                </p>
+            </div>
+            
+            <!-- Кнопка перехода к вакансиям -->
+            <div class="pt-12">
+                <a href="/vacancies" 
+                   class="inline-block px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition transform hover:-translate-y-1">
+                    <i class="fas fa-briefcase mr-2"></i>Посмотреть вакансии
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

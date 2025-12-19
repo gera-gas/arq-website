@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <!-- 
+    Базовый HTML шаблон для всех страниц.
+    Содержит общие элементы: навигацию, стили, скрипты.
+    Используем Jinja2 блоки для переопределения в дочерних шаблонах.
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}ARQ{% endblock %}</title>
+    
+    <!-- Tailwind CSS CDN для разработки -->
+    <!-- В продакшене заменим на собственный CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome для иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Блок для дополнительных стилей -->
+    {% block extra_css %}{% endblock %}
+</head>
+<body class="bg-gray-50">
+    <!-- Навигационная панель -->
+    {% include 'components/navbar.html' %}
+    
+    <!-- Основное содержимое -->
+    <main class="container mx-auto px-4 py-8">
+        {% block content %}
+        <!-- Здесь будет уникальное содержимое каждой страницы -->
+        {% endblock %}
+    </main>
+    
+    <!-- Подвал -->
+    {% include 'components/footer.html' %}
+    
+    <!-- Блок для дополнительных скриптов -->
+    {% block extra_js %}{% endblock %}
+</body>
+</html>
