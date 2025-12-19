@@ -6,7 +6,9 @@ from sqlalchemy.orm import declarative_base, sessionmaker
 
 # 1. Загружаем переменные из .env файла
 #    Если .env нет - используем значения по умолчанию
-load_dotenv()
+load_dotenv(".env.local")
+# Затем общие (они не заменят уже загруженные из .env.local)
+load_dotenv(".env", override=True)
 
 # 2. URL подключения к базе данных
 #    Формат: dialect+driver://username:password@host:port/database
