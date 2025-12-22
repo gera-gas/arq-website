@@ -85,3 +85,27 @@ arq-site/
 Проверка через uvocorn
 `uvicorn app.main:app --reload --host 0.0.0.0 --port 8000 --app-dir .`
 
+### Добавить новую страницу:
+1. Создаёшь новый роут
+```python
+@router.get("/portfolio")
+async def portfolio_page(request: Request):
+    return templates.TemplateResponse(
+        "portfolio.html",
+        {"request": request, "active_page": "portfolio"}
+    )
+```
+
+2. Создаёшь шаблон portfolio.html
+```python
+{% extends "base.html" %}
+{% block content %}...{% endblock %}
+```
+
+3. Добавляешь ссылку в навигацию
+```html
+<!-- В navbar.html -->
+<a href="/portfolio" class="{% if active_page == 'portfolio' %}active{% endif %}">
+    Портфолио
+</a>
+```

@@ -9,9 +9,7 @@ router = APIRouter(include_in_schema=False)  # Не показывать в Swag
 # Указываем папку с шаблонами
 templates = Jinja2Templates(directory="app/templates")
 # DEBUG!
-print(f"🛠️  Templates directory: {templates}")
-#print(f"📁 Exists: {os.path.exists(templates)}")
-#print(f"📋 Files: {os.listdir(templates)}")
+# print(f"🛠️  Templates directory: {templates}")
 
 @router.get("/")
 async def home(request: Request):
@@ -51,5 +49,16 @@ async def vacancies_page(request: Request):
             "active_page": "vacancies",
             "title": "ARQ - Вакансии",
             "vacancies": []  # Пока пустой список
+        }
+    )
+
+@router.get("/directions")
+async def directions_page(request: Request):
+        return templates.TemplateResponse(
+        "directions.html",  # Создадим позже
+        {
+            "request": request,
+            "active_page": "directions",
+            "title": "ARQ - Направления",
         }
     )

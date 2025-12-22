@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- 
-Главная страница сайта ARQ.
+Главная страница сайта ARQ Professional.
 Наследуется от base.html, переопределяет блоки content и title.
 -->
 {% extends "base.html" %}
@@ -19,28 +19,57 @@ ARQ - Главная страница
         <!-- Логотип ARQ -->
         <div class="space-y-6">
             <div class="flex justify-center space-x-3">
-                <span class="font-bold text-7xl md:text-9xl text-blue-600">A</span>
-                <span class="font-bold text-7xl md:text-9xl text-red-600">R</span>
+                <!-- Attention - КРАСНЫЙ (A) -->
+                <span class="font-bold text-7xl md:text-9xl text-red-600">A</span>
+                <!-- Responsibility - СИНИЙ (R) -->
+                <span class="font-bold text-7xl md:text-9xl text-blue-600">R</span>
+                <!-- Quality - ЗЕЛЁНЫЙ (Q) -->
                 <span class="font-bold text-7xl md:text-9xl text-green-600">Q</span>
             </div>
             
             <!-- Девиз компании -->
             <div class="text-2xl md:text-4xl font-light text-gray-600 tracking-wider">
-                Attention | Responsibility | Quality
+                <span class="font-bold text-red-600">A</span>ttention
+                 | <span class="font-bold text-blue-600">R</span>esponsibility
+                 | <span class="font-bold text-green-600">Q</span>uality
             </div>
-            
+
             <!-- Описание -->
             <div class="pt-8 max-w-2xl mx-auto">
-                <p class="text-lg md:text-xl text-gray-500">
-                    Профессиональные IT-решения для вашего бизнеса
+                <p class="text-lg md:text-xl text-gray-500 mb-8">
+                    Являемся региональными представителями крупного европейского аутсорсера мирового масштаба,
+                    ориентированного на различные технологические проекты
                 </p>
-                <p class="text-md md:text-lg text-gray-400 mt-4">
-                    Разработка, внедрение и поддержка сложных IT-систем
-                </p>
+                
+                <!-- Карточки с преимуществами -->
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                        <i class="fas fa-cogs text-blue-500 text-2xl mb-3"></i>
+                        <p class="text-md md:text-lg text-gray-600">
+                            Профессиональные IT-решения для вашего бизнеса
+                        </p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                        <i class="fas fa-code-branch text-green-500 text-2xl mb-3"></i>
+                        <p class="text-md md:text-lg text-gray-600">
+                            Разработка, внедрение и поддержка сложных IT-систем
+                        </p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                        <i class="fas fa-bullseye text-red-500 text-2xl mb-3"></i>
+                        <p class="text-md md:text-lg text-gray-600">
+                            Решение проблем и пожеланий клиента по девизу ARQ
+                        </p>
+                    </div>
+                </div>
             </div>
             
-            <!-- Кнопка перехода к вакансиям -->
-            <div class="pt-12">
+            <!-- Кнопки навигации -->
+            <div class="pt-12 flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/directions" 
+                   class="inline-block px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg hover:from-blue-600 hover:to-purple-700 transition transform hover:-translate-y-1">
+                    <i class="fas fa-compass mr-2"></i>Основные направления
+                </a>
                 <a href="/vacancies" 
                    class="inline-block px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition transform hover:-translate-y-1">
                     <i class="fas fa-briefcase mr-2"></i>Посмотреть вакансии
@@ -49,4 +78,90 @@ ARQ - Главная страница
         </div>
     </div>
 </section>
+
+<!-- Превью направлений -->
+<section id="directions-preview" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-gray-800 mb-12 text-center">Наши основные направления</h2>
+        
+        <div class="grid md:grid-cols-4 gap-8">
+            <!-- IT решения -->
+            <div class="text-center group">
+                <div class="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
+                    <i class="fas fa-laptop-code text-blue-600 text-3xl"></i>
+                </div>
+                <h3 class="font-bold text-gray-800 text-lg mb-2">Индивидуальные IT решения под ключ</h3>
+                <p class="text-gray-600 text-sm">Разработка ПО с учётом специфики бизнеса</p>
+            </div>
+            
+            <!-- SW/HW разработка -->
+            <div class="text-center group">
+                <div class="bg-green-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
+                    <i class="fas fa-microchip text-green-600 text-3xl"></i>
+                </div>
+                <h3 class="font-bold text-gray-800 text-lg mb-2">SW and HW development</h3>
+                <p class="text-gray-600 text-sm">Полный цикл разработки ПО и аппаратных решений</p>
+            </div>
+            
+            <!-- HR & Project -->
+            <div class="text-center group">
+                <div class="bg-purple-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
+                    <i class="fas fa-users text-purple-600 text-3xl"></i>
+                </div>
+                <h3 class="font-bold text-gray-800 text-lg mb-2">HR and project management</h3>
+                <p class="text-gray-600 text-sm">Подбор и управление IT-специалистами</p>
+            </div>
+            
+            <!-- R&D -->
+            <div class="text-center group">
+                <div class="bg-red-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
+                    <i class="fas fa-flask text-red-600 text-3xl"></i>
+                </div>
+                <h3 class="font-bold text-gray-800 text-lg mb-2">R&D</h3>
+                <p class="text-gray-600 text-sm">Исследования и инновационные разработки</p>
+            </div>
+        </div>
+        
+        <div class="text-center mt-12">
+            <a href="/directions" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium text-lg">
+                Подробнее о всех направлениях
+                <i class="fas fa-arrow-right ml-3"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Цель компании -->
+<section id="mission" class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+        <div class="bg-white rounded-2xl shadow-lg p-12">
+            <h2 class="text-4xl font-bold text-gray-800 mb-6">Наша главная цель</h2>
+            <div class="space-y-6 text-2xl text-gray-700">
+                <p>решение проблем и</p>
+                <p>пожеланий клиента в</p>
+                <p>IT по девизу ARQ</p>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-100">
+                <p class="text-gray-600 text-lg">
+                    Внимание к деталям | Ответственность за результат | Качество во всём
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// Плавная прокрутка к секциям
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    });
+});
+</script>
 {% endblock %}
