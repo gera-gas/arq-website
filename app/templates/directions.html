@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<!-- 
+Страница "Основные направления" ARQ Professional.
+Наследуется от base.html, показывает все 4 направления бизнеса.
+-->
+{% extends "base.html" %}
+
+{% block title %}
+ARQ - Основные направления
+{% endblock %}
+
+{% block content %}
+<!-- Основной контент страницы -->
+<section class="pt-8 pb-20 bg-gray-50 min-h-screen">
+    <div class="max-w-7xl mx-auto px-4">
+        <!-- Заголовок и описание -->
+        <div class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+                Основные направления
+            </h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                ARQ Professional специализируется на четырёх ключевых направлениях 
+                в IT-индустрии, обеспечивая комплексный подход к решению бизнес-задач
+            </p>
+        </div>
+        
+        <!-- Сетка направлений -->
+        <div class="grid lg:grid-cols-2 gap-8">
+            <!-- Колонка 1 -->
+            <div class="space-y-8">
+                <!-- 1. Индивидуальные IT решения под ключ -->
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300">
+                    <div class="p-8">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <div class="bg-blue-100 p-4 rounded-xl">
+                                    <i class="fas fa-laptop-code text-blue-600 text-3xl"></i>
+                                </div>
+                            </div>
+                            <div class="ml-6">
+                                <div class="flex items-center mb-3">
+                                    <span class="bg-blue-600 text-white text-sm font-bold px-3 py-1 rounded-full mr-3">
+                                        Направление 1
+                                    </span>
+                                    <h3 class="text-2xl font-bold text-gray-800">
+                                        Индивидуальные IT решения под ключ
+                                    </h3>
+                                </div>
+                                <p class="text-gray-600 text-lg mb-4">
+                                    Разработка программного обеспечения с полным учётом специфики вашего бизнеса, 
+                                    от анализа требований до внедрения и поддержки.
+                                </p>
+                                <ul class="space-y-2 text-gray-700">
+                                    <li class="flex items-center">
+                                        <i class="fas fa-check text-green-500 mr-3"></i>
+                                        Анализ бизнес-процессов и разработка технического задания
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-check text-green-500 mr-3"></i>
+                                        Проектирование архитектуры и UI/UX дизайн
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-check text-green-500 mr-3"></i>
+                                        Разработка, тестирование и внедрение
+                                    </li>
+                                    <li class="flex items-center">
+                                        <i class="fas fa-check text-green-500 mr-3"></i>
+                                        Техническая поддержка и развитие
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-blue-50 px-8 py-4 border-t border-blue-100">
+                        <div class="flex items-center text-blue-700">
+                            <i class="fas fa-clock mr-2"></i>
+                            <span class="font-medium">Сроки: от 3 месяцев</span>
+                            <span class="mx-4">•</span>
+                            <i class="fas fa-users mr-2"></i>
+                            <span class="font-medium">Команда: 2-10 специалистов</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 2. SW and HW development -->
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300">
+                    <div class="p-8">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <div class="bg-green-100 p-4 rounded-xl">
+                                    <i class="fas fa-microchip text-green-600 text-3xl"></i>
+                                </div>
+                            </div>
+                            <div class="ml-6">
+                                <div class="flex items-center mb-3">
+                                    <span class="bg-green-600 text-white text-sm font-bold px-3 py-1 rounded-full mr-3">
+                                        Направление 2
+                                    </span>
+                                    <h3 class="text-2xl font-bold text-gray-800">
+                                        SW and HW development
+                                    </h3>
+                                </div>
+                                <p class="text-gray-600 text-lg mb-4">
+                                    Полный цикл разработки программного обеспечения и аппаратных решений, 
+                                    включая embedded systems, драйверы и низкоуровневое программирование.
+                                </p>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="bg-gray-50 p-4 rounded-lg">
+                                        <h4 class="font-bold text-gray-700 mb-2">Software</h4>
+                                        <ul class="text-sm text-gray-600">
+                                            <li>• Системное программирование</li>
+                                            <li>• Драйверы устройств</li>
+                                            <li>• Real-time системы</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-gray-50 p-4 rounded-lg">
+                                        <h4 class="font-bold text-gray-700 mb-2">Hardware</h4>
+                                        <ul class="text-sm text-gray-600">
+                                            <li>• PCB design & layout</li>
+                                            <li>• FPGA программирование</li>
+                                            <li>• Прототипирование</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-green-50 px-8 py-4 border-t border-green-100">
+                        <div class="flex items-center text-green-700">
+                            <i class="fas fa-code mr-2"></i>
+                            <span class="font-medium">Технологии: C/C++, Python, Verilog</span>
+                            <span class="mx-4">•</span>
+                            <i class="fas fa-toolbox mr-2"></i>
+                            <span class="font-medium">Оборудование: Altium, Cadence</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Колонка 2 -->
+            <div class="space-y-8">
+                <!-- 3. HR and project management -->
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300">
+                    <div class="p-8">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <div class="bg-purple-100 p-4 rounded-xl">
+                                    <i class="fas fa-users text-purple-600 text-3xl"></i>
+                                </div>
+                            </div>
+                            <div class="ml-6">
+                                <div class="flex items-center mb-3">
+                                    <span class="bg-purple-600 text-white text-sm font-bold px-3 py-1 rounded-full mr-3">
+                                        Направление 3
+                                    </span>
+                                    <h3 class="text-2xl font-bold text-gray-800">
+                                        HR and project management
+                                    </h3>
+                                </div>
+                                <p class="text-gray-600 text-lg mb-4">
+                                    Поиск, подбор и управление IT-специалистами мирового уровня, 
+                                    а также полное управление проектами от инициации до закрытия.
+                                </p>
+                                <div class="flex space-x-6">
+                                    <div class="flex-1">
+                                        <h4 class="font-bold text-gray-700 mb-3 flex items-center">
+                                            <i class="fas fa-user-tie mr-2"></i> HR Services
+                                        </h4>
+                                        <ul class="space-y-2 text-gray-600">
+                                            <li>• Поиск и подбор специалистов</li>
+                                            <li>• Технические собеседования</li>
+                                            <li>• Аутсорсинг команд</li>
+                                            <li>• Релокация специалистов</li>
+                                        </ul>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h4 class="font-bold text-gray-700 mb-3 flex items-center">
+                                            <i class="fas fa-project-diagram mr-2"></i> Project Management
+                                        </h4>
+                                        <ul class="space-y-2 text-gray-600">
+                                            <li>• Agile/Scrum/Kanban</li>
+                                            <li>• Waterfall планирование</li>
+                                            <li>• Управление рисками</li>
+                                            <li>• Контроль качества</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-purple-50 px-8 py-4 border-t border-purple-100">
+                        <div class="flex items-center text-purple-700">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span class="font-medium">География: Европа, США, СНГ</span>
+                            <span class="mx-4">•</span>
+                            <i class="fas fa-chart-line mr-2"></i>
+                            <span class="font-medium">Методологии: Agile, Waterfall, Scrum</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 4. R&D -->
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300">
+                    <div class="p-8">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <div class="bg-red-100 p-4 rounded-xl">
+                                    <i class="fas fa-flask text-red-600 text-3xl"></i>
+                                </div>
+                            </div>
+                            <div class="ml-6">
+                                <div class="flex items-center mb-3">
+                                    <span class="bg-red-600 text-white text-sm font-bold px-3 py-1 rounded-full mr-3">
+                                        Направление 4
+                                    </span>
+                                    <h3 class="text-2xl font-bold text-gray-800">
+                                        R&D (Research and Development)
+                                    </h3>
+                                </div>
+                                <p class="text-gray-600 text-lg mb-4">
+                                    Исследования и инновационные разработки в области новых технологий, 
+                                    включая машинное обучение, компьютерное зрение и блокчейн.
+                                </p>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="bg-gray-50 p-4 rounded-lg">
+                                        <h4 class="font-bold text-gray-700 mb-2">Исследования</h4>
+                                        <ul class="text-sm text-gray-600">
+                                            <li>• Анализ технологических трендов</li>
+                                            <li>• Proof of Concept (PoC)</li>
+                                            <li>• Патентный поиск</li>
+                                            <li>• Научные публикации</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-gray-50 p-4 rounded-lg">
+                                        <h4 class="font-bold text-gray-700 mb-2">Разработки</h4>
+                                        <ul class="text-sm text-gray-600">
+                                            <li>• Прототипирование решений</li>
+                                            <li>• Алгоритмические исследования</li>
+                                            <li>• Интеграция новых технологий</li>
+                                            <li>• Технологический трансфер</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-red-50 px-8 py-4 border-t border-red-100">
+                        <div class="flex items-center text-red-700">
+                            <i class="fas fa-lightbulb mr-2"></i>
+                            <span class="font-medium">Направления: AI/ML, Blockchain, IoT</span>
+                            <span class="mx-4">•</span>
+                            <i class="fas fa-graduation-cap mr-2"></i>
+                            <span class="font-medium">Партнёры: Технические вузы, НИИ</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- CTA блок -->
+        <div class="mt-16 text-center">
+            <div class="bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-10 text-white">
+                <h3 class="text-2xl font-bold mb-4">Готовы обсудить сотрудничество?</h3>
+                <p class="text-lg mb-6 max-w-2xl mx-auto">
+                    Выберите направление, которое соответствует вашим задачам, 
+                    и наша команда свяжется с вами для обсуждения деталей
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="/vacancies" 
+                       class="bg-white text-blue-700 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
+                        <i class="fas fa-briefcase mr-2"></i>Присоединиться к команде
+                    </a>
+                    <a href="/" 
+                       class="bg-blue-900 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-950 transition">
+                        <i class="fas fa-home mr-2"></i>На главную страницу
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+/* Анимации для карточек */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Применяем анимацию к карточкам с задержкой */
+.bg-white.rounded-2xl {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Задержки для последовательного появления */
+.bg-white.rounded-2xl:nth-child(1) { animation-delay: 0.1s; }
+.bg-white.rounded-2xl:nth-child(2) { animation-delay: 0.2s; }
+.bg-white.rounded-2xl:nth-child(3) { animation-delay: 0.3s; }
+.bg-white.rounded-2xl:nth-child(4) { animation-delay: 0.4s; }
+</style>
+{% endblock %}
