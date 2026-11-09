@@ -1,48 +1,41 @@
-# Python
-.venv/
+# Python compilation artifacts
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
-*.py[oc]
 .Python
-wheels/
-*.egg-info
 
 # Virtual environments
-env/
+.venv/
 venv/
+env/
 ENV/
-.venv 
 
-# Database
+# Python packaging & distribution
+build/
+dist/
+*.egg-info/
+wheels/
+
+# Databases & local storage
 *.db
 *.sqlite3
+instance/
 
-# Environment
-.env.local
-.env.example
+# Environments & Secrets (CRITICAL)
+.env
+.env.*
+!.env.example
 
 # Logs
 *.log
 
-# IDE
+# IDEs & Editors
 .vscode/
 .idea/
 *.swp
 *.swo
 
-# OS
+# Operating System files
 .DS_Store
 Thumbs.db
-
-# Project specific
-instance/
-alembic.ini
-
-# uv
-uv.lock
-
-# Python packaging
-dist/
-build/

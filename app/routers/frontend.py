@@ -27,10 +27,10 @@ async def home(request: Request):
         - 'active_page' используется для подсветки активной ссылки в навигации
     """
     return templates.TemplateResponse(
-        "index.html",
-        {
-            "request": request,  # Обязательный параметр!
-            "active_page": "home",  # Для подсветки в навигации
+        request=request,
+        name="index.html",
+        context={
+            "active_page": "home",
             "title": "ARQ - IT Solutions",
             "company_name": "ARQ"
         }
@@ -43,9 +43,9 @@ async def vacancies_page(request: Request):
     Пока заглушка, позже добавим данные из БД.
     """
     return templates.TemplateResponse(
-        "vacancies.html",  # Создадим позже
-        {
-            "request": request,
+        request=request,
+        name="vacancies.html",  # Создадим позже
+        context={
             "active_page": "vacancies",
             "title": "ARQ - Вакансии",
             "vacancies": []  # Пока пустой список
@@ -55,10 +55,10 @@ async def vacancies_page(request: Request):
 @router.get("/directions")
 async def directions_page(request: Request):
         return templates.TemplateResponse(
-        "directions.html",  # Создадим позже
-        {
-            "request": request,
-            "active_page": "directions",
-            "title": "ARQ - Направления",
-        }
-    )
+            request=request,
+            name="directions.html",  # Создадим позже
+            context={
+                "active_page": "directions",
+                "title": "ARQ - Направления",
+            }
+        )
