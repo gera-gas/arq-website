@@ -35,9 +35,13 @@ def create_test_data():
         # Создаём тестового администратора
         admin_exists = db.query(AdminUser).filter_by(username="admin").first()
         if not admin_exists:
+            print("\nNo admin found in database!")
+            print("Please create first administrator:")
+            username = input("Username [admin]: ").strip() or "admin"
+            password = input("Password [admin123]: ").strip() or "admin123"
             admin = AdminUser(
-                username="admin",
-                hashed_password=get_password_hash("admin123")
+                username="username",
+                hashed_password=get_password_hash(password)
                 #hashed_password=hash_password_stub("admin123")
                 #hashed_password=pwd_context.hash("admin123")  # Смени в продакшене!
             )
